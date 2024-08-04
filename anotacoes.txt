@@ -1,2 +1,2 @@
 
-Rodar o comando npm rum deploy Ele vai girar os arquivos de build Criar a pasta dist e enviar lá para o git hub
+Rodar o comando npm rum deploy Ele vai gerar os arquivos de build Criar a pasta dist e enviar lá para o git hub

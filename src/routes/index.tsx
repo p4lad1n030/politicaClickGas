@@ -1,6 +1,6 @@
 import {  Route, Routes } from "react-router-dom";
-import Home from "../components/ClickGas";
-import MyDream from "../components/MyDream";
+import Home from "../pages/home/index";
+
 
 
 export default function MainRoutes() {

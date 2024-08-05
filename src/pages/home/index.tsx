@@ -2,9 +2,10 @@
 
 const Home = () => {
   return (
-    <div>
+    <section className="flex justify-center ">
       
-    </div>
+      <h1 className="">Home</h1>
+    </section>
   );
 }
 

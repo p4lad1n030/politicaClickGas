@@ -1,2 +1,5 @@
 
 Rodar o comando npm rum deploy Ele vai gerar os arquivos de build Criar a pasta dist e enviar lá para o git hub
+
+
+ordem deste projeto Usarei este projeto para Descreveram a política de privacidade dos aplicativos Clique gás e água E My Dream Haverá um menu Com um ícone do app click Em outro ícone do app my dramin quando o usuário clicar No big casa para gerar política em privacidade do click gás e quando clicar no my dronha para chegar a política de privacidade do my Dream

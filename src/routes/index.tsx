@@ -1,6 +1,6 @@
 import {  Route, Routes } from "react-router-dom";
-import Home from "../pages/home";
-import MyDream from "../pages/myDream";
+import Home from "../components/ClickGas";
+import MyDream from "../components/MyDream";
 
 
 export default function MainRoutes() {
@@ -8,7 +8,6 @@ export default function MainRoutes() {
         
         <Routes>
             <Route  path="/politicaClickGas/" element={<Home />} />
-            <Route  path="/politicaClickGas/mydream" element={<MyDream />} />
         </Routes>
         
     )

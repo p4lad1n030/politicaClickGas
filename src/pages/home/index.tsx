@@ -1,5 +1,6 @@
 import "./home.css";
 import logo from "../../assets/IconAppClickgas.png"
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
           <h3 className="text-2xl mb-4 text-justify">
             Esta Política de Privacidade descreve como são coletados, usados e compartilhados os dados pessoais dos usuários do aplicativo Click Gás.
           </h3>
+          <Link to={'/politicaClickGas/mydream'} >Politica My Dream</Link>
           <h3 className="text-2xl mb-2 text-center">Informações Coletadas</h3>
           <h3 className="text-2xl ">Informações de Pedido: </h3>
           <p className="text-lg ml-2">Quando um usuário realiza um pedido através do aplicativo, coletamos as seguintes informações:</p>

@@ -29,7 +29,7 @@ const MyDream = () => {
 
       <h2 className="text-3xl">Compartilhamento com Terceiros  </h2>
       <h3 className="text-2xl mb-4 text-justify">
-        Não há integração com terceiros em nosso aplicativo, exceto o uso da API de chat GT para interpretação dos sonhos.
+        Não há integração com terceiros em nosso aplicativo, exceto o uso da API de chatGPT para interpretação dos sonhos.
       </h3>
       
     </div>

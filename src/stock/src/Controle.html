@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/d88fbfa2f1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/style/estoque.css">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estoque</title>
+</head>
+<body>
+ <section   class="">
+    
+  <article id="userContent" class=" ">
+    <div id="userInfo" class="text-center">
+
+       <label for="file" id="label">
+        <img class="userImage" id="userImage"></label>
+        <input type="file" name="addImg" id="file" accept="image/*" style="display: none;">
+        <div id="loading1" style="display: none;"> <progress max="100" id="progress"></progress><br> 
+          <button type="button" id="playPauseBtn" class="btn btn-outline-primary mx-2" ><i class='far fa-pause-circle'></i> </button>
+          <button type="button" id="stopBtn" class="btn btn-outline-danger"><i class='far fa-stop-circle'></i></button>
+        </div>
+        
+      <h2 id="userName" class="text-center font-italic"></h2>
+      
+      <h4 id="userEmail" class="text-center font-italic text-break" ></h4>
+      <p id="emailVerified" class="text-center"></p>
+      <div id="sendEmailVerificationDiv" class="text-muted text-center ">
+        <button class="btn btn-outline-info mb-1 " onclick="sendEmailVerification()">
+          Verificar Email
+        </button>
+        <button  class="btn btn-outline-info mb-1" onclick="updateUserName()">Atualizar o nome</button>
+      </div>
+      <button  class="btn btn-outline-danger" onclick="deleteUserAccount()">
+        <i class='far fa-trash-alt'></i>
+      </button>
+      <button class="btn btn-outline-dark pos mt-2" onclick="signOut()">
+        <i class='fas fa-sign-out-alt'></i>
+      </button>
+    </div>
+  </article>
+
+   <aside class="border p-3">
+    <div class="">
+      <div id="loading" class="loading "  style="display: none">
+        <img src=".././assets/img/loading.gif" alt="carregamento dos recursos">
+      </div>
+
+        <h1 class="text-center mouseMemors">Controle de Estoque</h1>
+       
+        <!-- adiciona as informações no estoque -->
+         <div class="createProduct mx-auto" id="createProductDiv">
+          <!-- <img class="bgimg" src="../assets/img/bgadform.png" alt=""> -->
+           <form class="" id="createProduct">
+            <h2 class="text-center mouseMemors text-light textShadow">Insira os Dados do produto</h2>
+            <label for="nameProduct">Nome do Produto:</label>
+            <input type="text" name="nameProduct" id="nameProduct" class=""><br>
+            <label for="quantity">Quantidade:</label>
+            <input type="number" name="quantity" id="quantity" class=""><br>
+            <label for="price">Preço:</label>
+            <input type="text" name="price" id="price" class="" accept="quantity"><br>
+            <button class="btn btn-success" id="createProductBtn">Adicionar Produto</button>
+           </form>
+         </div>
+         <!-- atualiza as informações no estoque -->
+         <div class="mx-auto" id="updateProductsDiv" style="display: none;">
+           <form class="" id="updateProduct" >
+            <h2 class="text-center mouseMemors text-light textShadow">Atualize os Dados do produto</h2>
+            <label for="updateNameProduct">Nome do Produto:</label>
+            <input type="text" name="nameProduct" id="updateNameProduct" class=""><br>
+            <label for="updateQuantity">Quantidade:</label>
+            <input type="number" name="quantity" id="updateQuantity" class=""><br>
+            <label for="updatePrice">Preço:</label>
+            <input type="number" name="price" id="updatePrice" class=""><br>
+            <button class="btn btn-success " id="updateProductBtn">Atualizar Produto</button>
+           </form>
+         </div>
+
+         <!-- Realiza uma pesquisa no banco de daos -->
+          <div class="mx-auto searchProduct">
+            <h2 class="text-center mouseMemors text-light textShadow">Pesquise um produto pelo nome</h2>
+            <label for="searchProductInput">Nome do Produto:</label>
+            <input type="text" name="searchProduct" id="searchProductInput" class="" placeholder="Procurar..."><br>
+          </div>
+          
+          <!-- mostra as informações do estoque -->
+         <h3 class="text-center text-info mouseMemors">Produto(s) no estoque: <span id="count"></span></h3>
+         <div class="table-responsive">
+           <table class="table table-striped table-bordered table-hover">
+             <thead class="thead-dark">
+               <tr>
+                 <th class="text-center righteous ">código</th>
+                 <th class="text-center righteous">Nome</th>
+                 <th class="text-center righteous">Quantidade</th>
+                 <th class="text-center righteous">Preço</th>
+                 <th class="text-center righteous">Ações</th>
+               </tr>
+             </thead>
+             <tbody id="products">
+           
+             </tbody>
+           </table>
+         </div>
+
+       </div>
+
+      
+   </aside>
+   <footer class="bg-info" >
+
+   </footer>
+ </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <form action="src/estoque.html" id="management" class="center-form container"></form>
+
+  
+ <!-- <form action="src/estoque.html" id="management" class="center-form hide"> -->
+  
+ </form>
+ <!-- jQuery library -->
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+ 
+ <!-- Popper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+ 
+ <!-- Latest compiled JavaScript -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+ 
+ <!-- firebase -->
+ <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script> 
+ <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script> 
+ <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script> 
+
+ <script src=".././scripts/firebase.js"></script>
+ <script src=".././scripts/index.js"></script>
+ <script src=".././scripts/auth.js"></script>
+ <script src=".././scripts/controleEstoque.js"></script>
+</body>
+</html>

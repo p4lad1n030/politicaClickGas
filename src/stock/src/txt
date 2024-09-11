@@ -1,0 +1,47 @@
+ <!-- alterna entre adicionar e atualizar os produtos -->
+         <!-- <div class="text-center bg-light">
+          <h5 class="text-muted text-center">Oque você gostaria de fazer</h5>
+          
+          <label class="btn btn-outline-info" for="add">
+            <input type="radio" name="choice" id="add" checked>
+            Adicionar Produto
+          </label> 
+          
+          <label class="btn btn-outline-info" for="update">
+            <input type="radio" name="choice" id="update">
+            Atualizar Produto
+          </label>
+         </div> -->
+
+
+ Regras de segurança: 
+ {
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid == auth.uid",
+    		".write": "$uid == auth.uid",
+          ".indexOn": "nameLowerCase",
+            "$tid": {
+              ".validate": "newData.child('name').isString() && newData.child('name').val().length <= 30 && newData.child('nameLowerCase').isString() && newData.child('nameLowerCase').val().length <= 30"
+            }
+      }
+    }
+  }
+}
+
+//regras de segurança para o cloud storage
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid}/{document=**} {
+      allow read, delete: if request.auth.uid == uid;
+      allow create, update: if request.auth.uid == uid
+      		&& request.resource.data.name is string
+          && request.resource.data.name.size() <= 30
+      		&& request.resource.data.nameLowerCase is string
+          && request.resource.data.nameLowerCase.size() <= 30;
+    }
+  }
+}

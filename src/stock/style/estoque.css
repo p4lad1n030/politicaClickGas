@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/* importações das fontes do google */
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+/* /////////////////////////////////////////////////////// */
+
+
+.textShadow {
+  text-shadow: 2px 2px 2px black;
+}
+/*label responsavel por trocar a imagem do usuário */
+.label{
+  cursor: pointer;
+  z-index: 1;
+}
+/*  */
+#nameProduct,
+#updateNameProduct,
+#searchProductInput {
+  width: 50%;
+  margin-left: 5px !important;
+  opacity: 0.8;
+  outline: none;
+}
+#quantity,
+#updateQuantity {
+  width: 50%;
+  margin-left: 41px !important;
+  opacity: 0.8;
+  outline: none;
+}
+#price,
+#updatePrice {
+  width: 50%;
+  margin-left: 81px !important;
+  opacity: 0.8;
+  outline: none;
+}
+#createProductBtn,
+#updateProductBtn {
+  font-weight: bold;
+  box-shadow: 2px 2px 3px;
+  margin-left: calc(50% - 100px);
+}
+/* alterações */
+.bgimg {
+  width: 100%;
+  z-index: 0;
+}
+p,
+label {
+  font-size: 1.4em;
+  font-family: "Mouse Memoirs", cursive;
+}
+.createProduct,
+#updateProductsDiv {
+  background-image: url("../assets/img/form.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: 174% 27%;
+}
+.createProduct,
+#updateProductsDiv,
+.searchProduct {
+  overflow: auto;
+
+  width: 95%;
+
+  background-size: 90%;
+}
+.righteous {
+  letter-spacing: 5px;
+  font-family: "Righteous", cursive;
+}
+.chakraPetch {
+  font-family: "Chakra Petch", sans-serif;
+}
+.mouseMemors {
+  font-family: "Mouse Memoirs", cursive;
+}
+
+.pos {
+  display: inline;
+  position: relative;
+  margin-left: calc(50% - 20px);
+}
+.hide {
+  display: none !important;
+}
+.loading {
+  z-index: 1;
+  position: absolute;
+  top: calc(50% - 70px);
+  left: calc(50% - 120px);
+}
+.userImage {
+  cursor: pointer;
+  z-index: 0;
+  width: 100px;
+  border-radius: 50%;
+}
+.userImage:hover{
+  opacity: 0.7;
+}
+@media screen and (min-width: 560px) {
+}
+
+@media screen and (min-width: 768px) {
+  article {
+    padding: 5px;
+    min-height: 90vh;
+    float: left;
+    width: 30%;
+    display: block;
+  }
+
+  .rolagment {
+    overflow-y: scroll;
+  }
+  aside {
+    height: auto;
+    float: right;
+    width: 70%;
+    display: block;
+  }
+  .showManagement {
+    display: flex;
+  }
+  footer {
+    height: 10vh;
+    clear: both;
+  }
+}
+/* .fff{
+visibility:  ;
+} */

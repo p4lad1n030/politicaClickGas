@@ -1,0 +1,42 @@
+@charset "utf-8";
+.loading {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 137px);
+  z-index: 1;
+}
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+.fontg {
+  margin: auto;
+  font-family: cursive;
+}
+.content {
+  padding-left: 50px;
+  min-width: 500px;
+  text-align: center;
+}
+.center {
+  margin: auto;
+  width: 600px;
+  position: absolute;
+   top: calc(50% - 71px);
+  right: calc(50% - 300px); 
+}
+.gogl {
+  cursor: pointer;
+}
+.gogl:hover {
+  opacity: 0.7;
+}
+@media screen and (max-width: 600px) {
+  .center {
+    top: calc(50% - 50px);
+  }
+}
+  

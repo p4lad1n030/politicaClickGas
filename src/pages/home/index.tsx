@@ -3,6 +3,7 @@ import clickGas from '../../assets/IconAppClickgas.png';
 import ClickGas from '../../components/ClickGas';
 import myDream from '../../assets/myDream.png';
 import MyDream from "../../components/MyDream";
+import { Link } from "react-router-dom";
 
 
 
@@ -64,7 +65,7 @@ const Home = () => {
       {show && (dream && <MyDream />)}
 
 
-
+      <Link rel="stylesheet" to="/dist/controlstock/index.html" >Acessa controle de estoque Exemplo</Link>
     </section>
   );
 }

@@ -65,7 +65,7 @@ const Home = () => {
       {show && (dream && <MyDream />)}
 
 
-      <Link rel="stylesheet" to="/dist/controlstock/index.html" >Acessa controle de estoque Exemplo</Link>
+      
     </section>
   );
 }
